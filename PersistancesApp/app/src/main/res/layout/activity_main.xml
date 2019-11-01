@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/name_text"
+        android:layout_width="@dimen/screen_wide"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Please enter name"/>
+
+    <EditText
+        android:id="@+id/phone_text"
+        android:layout_width="@dimen/screen_wide"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_text"
+        android:hint="@string/phone_text"
+        android:layout_marginTop="@dimen/stand_mar"/>
+
+    <Button
+        android:id="@+id/reg_btn"
+        android:layout_width="@dimen/screen_wide"
+        android:text="Register"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/display_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_text"
+        android:layout_marginTop="@dimen/stand_mar"/>
+
+
+    <Button
+        android:id="@+id/display_btn"
+        android:layout_width="@dimen/screen_wide"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="View Users"
+        app:layout_constraintEnd_toStartOf="@id/reg_btn"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

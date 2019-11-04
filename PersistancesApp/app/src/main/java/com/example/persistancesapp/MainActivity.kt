@@ -32,11 +32,5 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        display_btn.setOnClickListener{
-
-            val userIntent = Intent(this, User_Info::class.java)
-            startActivity(userIntent)
-        }
-
     }
 }

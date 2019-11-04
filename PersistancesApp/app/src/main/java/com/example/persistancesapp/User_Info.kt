@@ -19,21 +19,27 @@ class User_Info : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var spEditor: SharedPreferences.Editor
-    var  key_for_key = 0
+
+
+
+    var  key_for_key: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user__info2)
-       var key_for_key = 0
-        val key_array = arrayOf("user_data_3000","user_data_3001", "user_data_3002","user_data_3003","user_data_3004","user_data_3005","user_data_3006",
+
+        val key_array = arrayOf( "key_data", "user_data_3000","user_data_3001", "user_data_3002","user_data_3003","user_data_3004","user_data_3005","user_data_3006",
             "user_data_3007","user_data_3008","user_data_3009")
 
 
-       val index = File("thekeyfile.txt").bufferedReader().readLine()
-        key_for_key = index.toInt()
+
 
         sharedPreferences = this.getSharedPreferences("saved_Users", 0)
         spEditor = sharedPreferences.edit()
+
+
+        key_for_key = sharedPreferences.getInt("key_data", 0)
+
 
 
 
@@ -42,16 +48,10 @@ class User_Info : AppCompatActivity() {
 
             key_for_key += 2
 
-            if (key_for_key >= 10 ){ key_for_key = 0}
+            if (key_for_key >= 11 ){ key_for_key = 0}
 
-            saved_txt.text = key_for_key.toString()
-
-
-            File("thekeyfile.txt").bufferedWriter().use{
-                out ->
-                out.write(key_for_key)
-            }
-
+            spEditor.putInt(key_array[0],key_for_key)
+            spEditor.commit()
 
         }
 
@@ -69,9 +69,11 @@ class User_Info : AppCompatActivity() {
                 spEditor.commit()
 
 
+            }
 
 
-        }
+
+
 
         val value  = sharedPreferences.getString("user_data_3000", "")
         val value1 = sharedPreferences.getString("user_data_3001", "")

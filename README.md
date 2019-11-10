@@ -1,7 +1,4 @@
-# Failure
-
-Homework Week 2 Day3
-1. Create an application which has a user form(Activity 1)
-User form will create an object of User(name, phone, email) which is a parcelable object. 
-2. When the user clicks register the app will navigate to another activity displaying the users information.
-3. The second activity should allow the user to take a profile picture from the camera
+Homework Week 2 Day4
+1. With a form to insert new user(name, phone) into shared preferences(up to 5 users) and a textview to display the already added users
+2. When the application is started the app should show the added user.
+3. The application should display a toast with the screen orientation when the screen orientation is changed
